@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DKTW Group — Damodar Kumar Technology World</title>
+<meta name="description" content="Damodar Kumar Technology World — Project Manager, Scrum Master, Cloud Consultant and digital entrepreneur. Arthnumro, CrushTheCert, AI Property, AI Product Lab.">
+<meta property="og:title" content="DKTW Group — Damodar Kumar Technology World">
+<meta property="og:description" content="One mind. Many worlds. Projects, consulting, and AI ventures by Damodar Kumar.">
+<meta property="og:url" content="https://www.dktwgroup.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --ink:#0f0e0c;
+  --ink2:#3a3832;
+  --ink3:#7a7670;
+  --cream:#faf9f6;
+  --warm:#f4f2ed;
+  --gold:#c9a84c;
+  --rule:rgba(15,14,12,0.1);
+  --card:#ffffff;
+  --ff-serif:'Cormorant Garamond',Georgia,serif;
+  --ff-sans:'Outfit',sans-serif;
+  --ff-mono:'DM Mono',monospace;
+}
+html{font-size:16px;scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font-family:var(--ff-sans);overflow-x:hidden}
+
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.25rem 4rem;
+  background:rgba(250,249,246,0.93);
+  backdrop-filter:blur(14px);
+  border-bottom:0.5px solid var(--rule);
+}
+.nav-logo{font-family:var(--ff-mono);font-size:1rem;font-weight:400;letter-spacing:0.14em;color:var(--ink);text-decoration:none}
+.nav-links{display:flex;gap:2.5rem}
+.nav-links a{font-family:var(--ff-sans);font-size:0.78rem;font-weight:400;color:var(--ink3);text-decoration:none;letter-spacing:0.06em;text-transform:uppercase;transition:color 0.2s}
+.nav-links a:hover{color:var(--ink)}
+.nav-cta{font-family:var(--ff-mono);font-size:0.72rem;color:var(--ink);text-decoration:none;border:0.5px solid var(--ink);padding:0.45rem 1.1rem;letter-spacing:0.08em;transition:all 0.2s}
+.nav-cta:hover{background:var(--ink);color:var(--cream)}
+
+.hero{
+  min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;
+  padding:0 4rem 5rem;position:relative;overflow:hidden;
+}
+.hero-eyebrow{
+  font-family:var(--ff-mono);font-size:0.7rem;letter-spacing:0.18em;
+  color:var(--ink3);text-transform:uppercase;margin-bottom:1.5rem;
+  display:flex;align-items:center;gap:1rem;position:relative;z-index:1;
+}
+.hero-eyebrow::before{content:'';width:2.5rem;height:0.5px;background:var(--ink3)}
+.hero-headline{
+  font-family:var(--ff-serif);font-size:clamp(3.5rem,8vw,7.5rem);
+  font-weight:300;line-height:1.0;letter-spacing:-0.02em;
+  color:var(--ink);margin-bottom:2rem;max-width:14ch;position:relative;z-index:1;
+}
+.hero-headline em{font-style:italic;color:var(--gold)}
+.hero-sub{
+  font-size:0.95rem;font-weight:300;color:var(--ink2);
+  max-width:42ch;line-height:1.75;margin-bottom:3rem;position:relative;z-index:1;
+}
+.hero-actions{display:flex;align-items:center;gap:2rem;position:relative;z-index:1}
+.btn-primary{
+  font-family:var(--ff-mono);font-size:0.78rem;letter-spacing:0.1em;
+  background:var(--ink);color:var(--cream);padding:0.85rem 2rem;
+  text-decoration:none;transition:all 0.25s;border:0.5px solid var(--ink);display:inline-block;
+}
+.btn-primary:hover{background:transparent;color:var(--ink)}
+.btn-ghost{
+  font-family:var(--ff-mono);font-size:0.78rem;letter-spacing:0.08em;
+  color:var(--ink3);text-decoration:none;display:flex;align-items:center;gap:0.5rem;
+  transition:color 0.2s;
+}
+.btn-ghost:hover{color:var(--ink)}
+.hero-deco{
+  position:absolute;right:-2rem;top:6rem;
+  font-family:var(--ff-serif);font-size:22vw;font-weight:300;
+  color:var(--warm);line-height:1;z-index:0;pointer-events:none;
+  letter-spacing:-0.04em;user-select:none;
+}
+.hero-scroll{
+  position:absolute;right:4rem;bottom:5rem;
+  font-family:var(--ff-mono);font-size:0.65rem;letter-spacing:0.15em;
+  color:var(--ink3);writing-mode:vertical-rl;text-transform:uppercase;
+  display:flex;align-items:center;gap:1rem;z-index:1;
+}
+.hero-scroll::after{content:'';width:0.5px;height:3rem;background:var(--ink3)}
+
+.ticker{
+  background:var(--ink);padding:0.85rem 0;
+  border-top:0.5px solid rgba(255,255,255,0.06);
+  overflow:hidden;white-space:nowrap;
+}
+.ticker-track{display:inline-flex;animation:ticker 30s linear infinite}
+.ticker-item{
+  font-family:var(--ff-mono);font-size:0.68rem;letter-spacing:0.12em;
+  color:rgba(250,249,246,0.4);text-transform:uppercase;padding:0 3rem;
+  border-right:0.5px solid rgba(255,255,255,0.08);
+}
+.ticker-item span{color:var(--gold);margin-right:0.5rem}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+section{padding:5rem 4rem}
+.section-label{
+  font-family:var(--ff-mono);font-size:0.68rem;letter-spacing:0.18em;
+  color:var(--ink3);text-transform:uppercase;margin-bottom:3rem;
+  display:flex;align-items:center;gap:1rem;
+}
+.section-label::before{content:'';width:1.5rem;height:0.5px;background:var(--gold)}
+
+.about{background:var(--warm);border-top:0.5px solid var(--rule)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.about-text h2{
+  font-family:var(--ff-serif);font-size:clamp(2rem,4vw,3.2rem);
+  font-weight:300;line-height:1.15;margin-bottom:1.5rem;color:var(--ink);
+}
+.about-text h2 em{font-style:italic;color:var(--gold)}
+.about-text p{font-size:0.95rem;font-weight:300;color:var(--ink2);line-height:1.85;margin-bottom:1.1rem}
+.clients-label{font-family:var(--ff-mono);font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink3);margin-bottom:0.8rem;margin-top:1.8rem}
+.clients-pills{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:2rem}
+.client-pill{font-family:var(--ff-mono);font-size:0.65rem;letter-spacing:0.06em;color:var(--ink2);border:0.5px solid var(--rule);padding:0.3rem 0.8rem;background:var(--card)}
+.about-stats{display:flex;flex-direction:column;padding-top:2rem;border-top:0.5px solid var(--rule)}
+.stat{display:flex;justify-content:space-between;align-items:baseline;padding:1rem 0;border-bottom:0.5px solid var(--rule)}
+.stat-num{font-family:var(--ff-serif);font-size:2.2rem;font-weight:300;color:var(--ink)}
+.stat-label{font-family:var(--ff-mono);font-size:0.7rem;letter-spacing:0.1em;color:var(--ink3);text-transform:uppercase}
+
+.about-aside{position:relative}
+.dkid-card{background:var(--card);border:0.5px solid var(--rule);padding:2rem;position:sticky;top:6rem}
+.dk-monogram{width:4rem;height:4rem;background:var(--ink);display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem}
+.dk-monogram span{font-family:var(--ff-serif);font-size:1.4rem;font-weight:300;color:var(--cream);letter-spacing:0.05em}
+.dk-name{font-family:var(--ff-serif);font-size:1.4rem;font-weight:300;margin-bottom:0.25rem;color:var(--ink)}
+.dk-role{font-family:var(--ff-mono);font-size:0.7rem;letter-spacing:0.1em;color:var(--ink3);text-transform:uppercase;margin-bottom:1.5rem}
+.dk-tags{display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:1.5rem}
+.tag{font-family:var(--ff-mono);font-size:0.65rem;letter-spacing:0.08em;color:var(--ink2);border:0.5px solid var(--rule);padding:0.3rem 0.7rem}
+.dk-bio{font-size:0.88rem;font-weight:300;color:var(--ink2);line-height:1.85}
+.dk-divider{height:0.5px;background:var(--rule);margin:1.5rem 0}
+.dk-currently{font-family:var(--ff-mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink3);margin-bottom:0.5rem}
+.dk-current-val{font-size:0.85rem;font-weight:300;color:var(--ink2);line-height:1.7}
+.dk-current-val strong{font-weight:500;color:var(--ink)}
+
+.ventures{border-top:0.5px solid var(--rule)}
+.ventures-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3rem}
+.ventures-header h2{font-family:var(--ff-serif);font-size:clamp(2rem,4vw,3rem);font-weight:300;color:var(--ink)}
+.ventures-header h2 em{font-style:italic;color:var(--gold)}
+.see-all{font-family:var(--ff-mono);font-size:0.75rem;letter-spacing:0.08em;color:var(--ink3);text-decoration:none;transition:color 0.2s}
+.see-all:hover{color:var(--ink)}
+
+.ventures-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border:0.5px solid var(--rule)}
+.venture-card{padding:2.5rem;border:0.5px solid var(--rule);transition:background 0.25s;cursor:pointer;position:relative;overflow:hidden}
+.venture-card:hover{background:var(--warm)}
+.venture-card:hover .vc-arrow{opacity:1;transform:translate(0,0)}
+.venture-card.featured{grid-column:span 2;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.vc-index{font-family:var(--ff-mono);font-size:0.65rem;color:var(--ink3);letter-spacing:0.1em;margin-bottom:1.5rem}
+.vc-icon{font-size:2rem;margin-bottom:1.2rem;line-height:1}
+.vc-name{font-family:var(--ff-serif);font-size:1.7rem;font-weight:300;margin-bottom:0.4rem;color:var(--ink)}
+.vc-type{font-family:var(--ff-mono);font-size:0.65rem;letter-spacing:0.1em;color:var(--gold);text-transform:uppercase;margin-bottom:1rem}
+.vc-desc{font-size:0.88rem;font-weight:300;color:var(--ink2);line-height:1.8;margin-bottom:1.5rem}
+.vc-link{font-family:var(--ff-mono);font-size:0.7rem;letter-spacing:0.08em;color:var(--ink3);text-decoration:none;transition:color 0.2s}
+.vc-link:hover{color:var(--ink)}
+.vc-arrow{position:absolute;top:2rem;right:2rem;font-size:1rem;color:var(--ink3);opacity:0;transform:translate(-4px,4px);transition:all 0.25s}
+.vc-status{display:inline-block;font-family:var(--ff-mono);font-size:0.6rem;letter-spacing:0.1em;padding:0.2rem 0.65rem;margin-top:0.8rem;text-transform:uppercase}
+.vc-status.live{border:0.5px solid #3a8c4e;color:#3a8c4e}
+.vc-status.building{border:0.5px solid var(--gold);color:var(--gold)}
+.vc-stack{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:1.2rem}
+.vc-tech{font-family:var(--ff-mono);font-size:0.6rem;letter-spacing:0.06em;color:var(--ink3);background:var(--warm);padding:0.2rem 0.55rem}
+
+.philosophy{background:var(--ink);border-top:0.5px solid rgba(255,255,255,0.08);padding:5rem 4rem}
+.philosophy .section-label{color:rgba(250,249,246,0.35)}
+.philosophy .section-label::before{background:var(--gold)}
+.philo-quote{
+  font-family:var(--ff-serif);font-size:clamp(1.8rem,4vw,3.5rem);
+  font-weight:300;line-height:1.3;max-width:22ch;font-style:italic;
+  color:var(--cream);margin-bottom:4rem;letter-spacing:-0.01em;
+}
+.philo-pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:0.5px solid rgba(250,249,246,0.1)}
+.pillar{padding:2rem 2rem 2.5rem;border:0.5px solid rgba(250,249,246,0.1)}
+.pillar-num{font-family:var(--ff-mono);font-size:0.65rem;letter-spacing:0.15em;color:var(--gold);margin-bottom:1.5rem}
+.pillar h3{font-family:var(--ff-serif);font-size:1.35rem;font-weight:300;margin-bottom:0.8rem;color:var(--cream)}
+.pillar p{font-size:0.85rem;font-weight:300;color:rgba(250,249,246,0.5);line-height:1.8}
+
+.contact{background:var(--warm);border-top:0.5px solid var(--rule)}
+.contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.contact-lhs h2{font-family:var(--ff-serif);font-size:clamp(2rem,4vw,3rem);font-weight:300;margin-bottom:1rem;color:var(--ink)}
+.contact-lhs h2 em{font-style:italic;color:var(--gold)}
+.contact-lhs p{font-size:0.9rem;font-weight:300;color:var(--ink2);line-height:1.85;margin-bottom:2rem}
+.contact-links{display:flex;flex-direction:column}
+.contact-link{display:flex;align-items:center;justify-content:space-between;padding:1rem 0;border-bottom:0.5px solid var(--rule);text-decoration:none;transition:padding-left 0.2s}
+.contact-link:hover{padding-left:0.5rem}
+.cl-label{font-family:var(--ff-mono);font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink3)}
+.cl-val{font-size:0.9rem;color:var(--ink)}
+.contact-rhs{padding-top:0.5rem}
+.form-field{margin-bottom:1.5rem}
+.form-label{font-family:var(--ff-mono);font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink3);margin-bottom:0.5rem;display:block}
+.form-input{width:100%;background:transparent;border:none;border-bottom:0.5px solid var(--ink2);padding:0.6rem 0;font-family:var(--ff-sans);font-size:0.9rem;color:var(--ink);outline:none;transition:border-color 0.2s}
+.form-input:focus{border-bottom-color:var(--gold)}
+.form-input::placeholder{color:var(--ink3)}
+textarea.form-input{resize:vertical;min-height:80px}
+.form-btn{font-family:var(--ff-mono);font-size:0.78rem;letter-spacing:0.1em;background:var(--ink);color:var(--cream);padding:0.85rem 2rem;border:none;cursor:pointer;transition:all 0.25s;margin-top:0.5rem}
+.form-btn:hover{background:var(--gold);color:var(--ink)}
+
+footer{background:var(--ink);padding:2.5rem 4rem;display:flex;align-items:center;justify-content:space-between;border-top:0.5px solid rgba(255,255,255,0.06)}
+.footer-logo{font-family:var(--ff-mono);font-size:0.9rem;letter-spacing:0.15em;color:var(--cream)}
+.footer-copy{font-family:var(--ff-mono);font-size:0.62rem;letter-spacing:0.06em;color:rgba(250,249,246,0.28)}
+.footer-links{display:flex;gap:2rem}
+.footer-links a{font-family:var(--ff-mono);font-size:0.62rem;letter-spacing:0.08em;color:rgba(250,249,246,0.38);text-decoration:none;transition:color 0.2s}
+.footer-links a:hover{color:var(--cream)}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.hero-eyebrow{animation:fadeUp 0.8s ease both;animation-delay:0.1s}
+.hero-headline{animation:fadeUp 0.8s ease both;animation-delay:0.25s}
+.hero-sub{animation:fadeUp 0.8s ease both;animation-delay:0.4s}
+.hero-actions{animation:fadeUp 0.8s ease both;animation-delay:0.55s}
+
+@media(max-width:900px){
+  nav,section,footer,.philosophy{padding-left:1.5rem;padding-right:1.5rem}
+  .hero{padding:0 1.5rem 4rem}
+  .about-grid,.contact-inner{grid-template-columns:1fr;gap:3rem}
+  .ventures-grid{grid-template-columns:1fr}
+  .venture-card.featured{grid-column:span 1;grid-template-columns:1fr}
+  .philo-pillars{grid-template-columns:1fr}
+  .hero-scroll{display:none}
+  .hero-deco{font-size:40vw;right:-1rem;top:10rem}
+  .nav-links{display:none}
+  footer{flex-direction:column;gap:1rem;text-align:center}
+  .footer-links{flex-wrap:wrap;justify-content:center}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">DKTW</a>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#ventures">Ventures</a>
+    <a href="#philosophy">Philosophy</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a href="#contact" class="nav-cta">Let's talk</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-deco">DK</div>
+  <div class="hero-eyebrow">Damodar Kumar Technology World</div>
+  <h1 class="hero-headline">One mind.<br><em>Many</em><br>worlds.</h1>
+  <p class="hero-sub">A founder, consultant, and builder operating across enterprise cloud, agile delivery, AI products, and digital ventures — from Melbourne to the world.</p>
+  <div class="hero-actions">
+    <a href="#ventures" class="btn-primary">Explore the ventures</a>
+    <a href="#about" class="btn-ghost">Who is Damodar <span>→</span></a>
+  </div>
+  <div class="hero-scroll">Scroll</div>
+</section>
+
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="ticker-item"><span>◆</span>Project Management</span>
+    <span class="ticker-item"><span>◆</span>Scrum Mastery</span>
+    <span class="ticker-item"><span>◆</span>Cloud Consulting</span>
+    <span class="ticker-item"><span>◆</span>AI Products</span>
+    <span class="ticker-item"><span>◆</span>Numerology Tech</span>
+    <span class="ticker-item"><span>◆</span>EdTech</span>
+    <span class="ticker-item"><span>◆</span>PropTech</span>
+    <span class="ticker-item"><span>◆</span>Financial Services</span>
+    <span class="ticker-item"><span>◆</span>Energy &amp; Oil</span>
+    <span class="ticker-item"><span>◆</span>Telecom</span>
+    <span class="ticker-item"><span>◆</span>Project Management</span>
+    <span class="ticker-item"><span>◆</span>Scrum Mastery</span>
+    <span class="ticker-item"><span>◆</span>Cloud Consulting</span>
+    <span class="ticker-item"><span>◆</span>AI Products</span>
+    <span class="ticker-item"><span>◆</span>Numerology Tech</span>
+    <span class="ticker-item"><span>◆</span>EdTech</span>
+    <span class="ticker-item"><span>◆</span>PropTech</span>
+    <span class="ticker-item"><span>◆</span>Financial Services</span>
+    <span class="ticker-item"><span>◆</span>Energy &amp; Oil</span>
+    <span class="ticker-item"><span>◆</span>Telecom</span>
+  </div>
+</div>
+
+<section class="about" id="about">
+  <div class="section-label">The person behind DKTW</div>
+  <div class="about-grid">
+    <div class="about-text">
+      <h2>Project Manager.<br><em>Scrum Master.</em><br>Cloud Consultant.<br>Builder.</h2>
+      <p>Damodar Kumar is a Project Manager and Scrum Master with a sharp instinct for delivery and an obsession with building things that actually work. He brings order to complexity — whether that's an enterprise cloud migration spanning multiple countries or an AI product launched from scratch over a weekend.</p>
+      <p>As a Cloud Consultant at Publicis Sapient, Damodar leads high-stakes transformation projects across diverse industries — bringing cross-functional teams into alignment and keeping delivery moving through ambiguity. He's the kind of PM who understands the architecture, not just the board.</p>
+      <p>DKTW is the natural expression of that range — a holding brand for consulting work, live digital products, AI ventures, and whatever problem worth solving comes next.</p>
+      <div class="clients-label">Organisations worked with</div>
+      <div class="clients-pills">
+        <span class="client-pill">Origin Energy</span>
+        <span class="client-pill">Builure</span>
+        <span class="client-pill">McDermott International</span>
+        <span class="client-pill">Publicis Sapient</span>
+      </div>
+      <div class="about-stats">
+        <div class="stat">
+          <span class="stat-num">6+</span>
+          <span class="stat-label">Years in project &amp; agile delivery</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">4+</span>
+          <span class="stat-label">Industries served</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">5</span>
+          <span class="stat-label">Active ventures under DKTW</span>
+        </div>
+      </div>
+    </div>
+    <div class="about-aside">
+      <div class="dkid-card">
+        <div class="dk-monogram"><span>DK</span></div>
+        <div class="dk-name">Damodar Kumar</div>
+        <div class="dk-role">Founder, DKTW Group</div>
+        <div class="dk-tags">
+          <span class="tag">Project Manager</span>
+          <span class="tag">Scrum Master</span>
+          <span class="tag">Cloud Consulting</span>
+          <span class="tag">AI Builder</span>
+          <span class="tag">PropTech</span>
+          <span class="tag">EdTech</span>
+          <span class="tag">Melbourne</span>
+        </div>
+        <p class="dk-bio">Consultant by day, builder by night. Damodar brings the same level of rigour to a Fortune 500 cloud transformation as he does to shipping his own AI products. He doesn't just manage projects — he creates them.</p>
+        <div class="dk-divider"></div>
+        <div class="dk-currently">Currently</div>
+        <div class="dk-current-val"><strong>Cloud Consultant at Publicis Sapient</strong> — leading project delivery across financial services, energy, oil &amp; gas, and telecom sectors.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ventures" id="ventures">
+  <div class="ventures-header">
+    <h2>The <em>ventures</em></h2>
+    <a href="#contact" class="see-all">Partner with us →</a>
+  </div>
+  <div class="ventures-grid">
+
+    <div class="venture-card">
+      <div class="vc-arrow">↗</div>
+      <div class="vc-index">01 / 05</div>
+      <div class="vc-icon">🔢</div>
+      <div class="vc-name">Arthnumro</div>
+      <div class="vc-type">AI · Numerology · Shopify</div>
+      <p class="vc-desc">AI-powered numerology reports delivered instantly. Built on Flask, Claude AI, and Shopify — blending ancient wisdom with modern automation. Every report is personalised, data-driven, and delivered to your inbox within seconds of purchase.</p>
+      <a href="https://www.arthnumro.com" class="vc-link">arthnumro.com →</a>
+      <br><span class="vc-status live">Live</span>
+      <div class="vc-stack">
+        <span class="vc-tech">Flask</span>
+        <span class="vc-tech">Claude AI</span>
+        <span class="vc-tech">Shopify</span>
+        <span class="vc-tech">ReportLab</span>
+        <span class="vc-tech">Resend</span>
+      </div>
+    </div>
+
+    <div class="venture-card">
+      <div class="vc-arrow">↗</div>
+      <div class="vc-index">02 / 05</div>
+      <div class="vc-icon">⚡</div>
+      <div class="vc-name">PM &amp; Scrum Practice</div>
+      <div class="vc-type">Consulting · Enterprise · Agile Coaching</div>
+      <p class="vc-desc">Enterprise project delivery with a human edge. Leading cloud transformations, CRM implementations, and agile turnarounds across financial services, energy, oil &amp; gas, and telecom — keeping teams aligned, unblocked, and shipping.</p>
+      <a href="#contact" class="vc-link">Engage Damodar →</a>
+      <br><span class="vc-status live">Available</span>
+      <div class="vc-stack">
+        <span class="vc-tech">AWS</span>
+        <span class="vc-tech">Salesforce</span>
+        <span class="vc-tech">Jira</span>
+        <span class="vc-tech">Scrum</span>
+        <span class="vc-tech">SAFe</span>
+      </div>
+    </div>
+
+    <div class="venture-card">
+      <div class="vc-arrow">↗</div>
+      <div class="vc-index">03 / 05</div>
+      <div class="vc-icon">🎯</div>
+      <div class="vc-name">CrushTheCert</div>
+      <div class="vc-type">EdTech · Certification · Learning</div>
+      <p class="vc-desc">Pass your certification exam — the first time. A focused prep platform for Scrum, Agile, and cloud certifications, distilled from Damodar's own exam-passing playbook. No fluff. Just what works.</p>
+      <a href="#contact" class="vc-link">Visit CrushTheCert →</a>
+      <br><span class="vc-status live">Live</span>
+      <div class="vc-stack">
+        <span class="vc-tech">PSM</span>
+        <span class="vc-tech">PSPO</span>
+        <span class="vc-tech">AWS Cert</span>
+        <span class="vc-tech">PMP</span>
+      </div>
+    </div>
+
+    <div class="venture-card">
+      <div class="vc-arrow">↗</div>
+      <div class="vc-index">04 / 05</div>
+      <div class="vc-icon">🏢</div>
+      <div class="vc-name">AI into Property</div>
+      <div class="vc-type">PropTech · AI · Property Management</div>
+      <p class="vc-desc">Bringing AI into the world of property management — automating tenant communication, lease tracking, maintenance workflows, and reporting. Enterprise-grade systems thinking applied to one of the world's oldest industries.</p>
+      <a href="#contact" class="vc-link">Follow this venture →</a>
+      <br><span class="vc-status building">Building</span>
+      <div class="vc-stack">
+        <span class="vc-tech">AI Agents</span>
+        <span class="vc-tech">Automation</span>
+        <span class="vc-tech">PropTech</span>
+      </div>
+    </div>
+
+    <div class="venture-card featured">
+      <div>
+        <div class="vc-arrow">↗</div>
+        <div class="vc-index">05 / 05</div>
+        <div class="vc-icon">🤖</div>
+        <div class="vc-name">AI Product Lab</div>
+        <div class="vc-type">R&amp;D · AI · Automation · Experiments</div>
+      </div>
+      <div>
+        <p class="vc-desc">The experimental engine of DKTW. This is where new ideas are stress-tested, prototyped, and — if they survive — shipped as real products. Agentic workflows, PDF automation pipelines, AI-native APIs, and whatever the next problem worth solving looks like. Not every experiment becomes a product. But every product starts here.</p>
+        <a href="#contact" class="vc-link">Follow the experiments →</a>
+        <br><span class="vc-status building">Ongoing</span>
+        <div class="vc-stack">
+          <span class="vc-tech">Claude API</span>
+          <span class="vc-tech">Python</span>
+          <span class="vc-tech">Render</span>
+          <span class="vc-tech">GitHub</span>
+          <span class="vc-tech">Agentic AI</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="philosophy" id="philosophy">
+  <div class="section-label">What drives the work</div>
+  <p class="philo-quote">"Build things that don't need explaining. Deliver clarity inside complexity."</p>
+  <div class="philo-pillars">
+    <div class="pillar">
+      <div class="pillar-num">01</div>
+      <h3>Systems thinking</h3>
+      <p>Every product and every sprint is a system. Understanding how the parts communicate — and where they break — is where great delivery begins. Damodar brings this lens to everything he touches.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">02</div>
+      <h3>Compound curiosity</h3>
+      <p>From numerology to cloud migration to property tech — broad curiosity compounds into rare capability. DKTW ventures exist precisely because Damodar explores edges that specialists never reach.</p>
+    </div>
+    <div class="pillar">
+      <div class="pillar-num">03</div>
+      <h3>Ship, then refine</h3>
+      <p>A live product in the hands of real users beats a perfect product in a roadmap. Momentum is a feature. DKTW ships early, listens hard, and iterates without ego.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="section-label">Start a conversation</div>
+  <div class="contact-inner">
+    <div class="contact-lhs">
+      <h2>Let's build<br><em>something</em> real.</h2>
+      <p>Whether you need a project manager who gets things done, want to collaborate on an AI venture, or are simply curious about the DKTW world — Damodar's door is open. No gatekeepers, no intake forms.</p>
+      <div class="contact-links">
+        <a href="mailto:hello@dktwgroup.com" class="contact-link">
+          <span class="cl-label">Email</span>
+          <span class="cl-val">hello@dktwgroup.com</span>
+        </a>
+        <a href="https://www.linkedin.com/in/damodarkumar" class="contact-link">
+          <span class="cl-label">LinkedIn</span>
+          <span class="cl-val">linkedin.com/in/damodarkumar</span>
+        </a>
+        <a href="https://www.arthnumro.com" class="contact-link">
+          <span class="cl-label">Arthnumro</span>
+          <span class="cl-val">arthnumro.com</span>
+        </a>
+        <div class="contact-link" style="cursor:default">
+          <span class="cl-label">Base</span>
+          <span class="cl-val">Melbourne, Australia</span>
+        </div>
+      </div>
+    </div>
+    <div class="contact-rhs">
+      <div class="form-field">
+        <label class="form-label">Name</label>
+        <input class="form-input" type="text" placeholder="Your name">
+      </div>
+      <div class="form-field">
+        <label class="form-label">Email</label>
+        <input class="form-input" type="email" placeholder="your@email.com">
+      </div>
+      <div class="form-field">
+        <label class="form-label">What's on your mind</label>
+        <textarea class="form-input" placeholder="Consulting, collaboration, a product idea..."></textarea>
+      </div>
+      <button class="form-btn">Send message →</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">DKTW</div>
+  <div class="footer-copy">© 2026 Damodar Kumar Technology World. All rights reserved.</div>
+  <div class="footer-links">
+    <a href="#about">About</a>
+    <a href="#ventures">Ventures</a>
+    <a href="#philosophy">Philosophy</a>
+    <a href="https://www.arthnumro.com">Arthnumro</a>
+    <a href="#contact">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>
